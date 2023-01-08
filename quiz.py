@@ -1,4 +1,4 @@
-
+import main
 from flask import Flask, render_template, request
 import os
 import openai
@@ -27,7 +27,7 @@ def make_request(quiz_type, num_q):
         "https://api.openai.com/v1/completions",
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer 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",
+            "Authorization": f"Bearer ${{api_key}}",
     },
     json={
         "model": "text-davinci-003",
