@@ -40,8 +40,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        steps:
-      - name: get api key
-          with: # Set the secret as an input
-        super_secret: ${{ secrets.API_KEY }}
-
