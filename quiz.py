@@ -8,7 +8,7 @@ import pydf
 
 app = Flask(__name__)
 
-api_key = ${{ secrets.API_KEY }}
+api_key = '${{ secrets.API_KEY }}'
 
 
 @app.route('/', methods=["GET", "POST"])
