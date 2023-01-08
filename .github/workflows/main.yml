@@ -13,12 +13,10 @@ jobs:
         # run your app here
         # access secret here
 
-  steps:
-    - name: 
-        get_api_key
-      with: 
-        api_key
-        super_secret: 
-            ${{ secrets.api_key }}
-      env: # Or as an environment variable
-        super_secret: ${{ secrets.api_key }}
+steps:
+  - name: 
+      get_api_key
+    with: 
+      api_key
+      super_secret: 
+          ${{ secrets.api_key }}
