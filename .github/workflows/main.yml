@@ -1,9 +1,24 @@
-steps:
-  - name: 
-      get_api_key
-    with: 
-      api_key
-      super_secret: 
-          ${{ secrets.api_key }}
-    env: # Or as an environment variable
-      super_secret: ${{ secrets.api_key }}
+name: Run app
+
+on:
+  http_request:
+    path: /run-app
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        # run your app here
+        # access secret here
+
+  steps:
+    - name: 
+        get_api_key
+      with: 
+        api_key
+        super_secret: 
+            ${{ secrets.api_key }}
+      env: # Or as an environment variable
+        super_secret: ${{ secrets.api_key }}
