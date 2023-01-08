@@ -1,4 +1,4 @@
-import main
+
 from flask import Flask, render_template, request
 import os
 import openai
@@ -42,8 +42,8 @@ def make_request(quiz_type, num_q):
 # check server response, create python dict if all good
     if response.status_code == 200:
     # Convert the JSON response to a Python dictionary
-        quiz = response.json()
-        return '\n'.join(item['text'] for item in quiz['choices'])
+       quiz = response.json()
+       return '\n'.join(item['text'] for item in quiz['choices'])
     
     else:
         print(f"An error occurred: {response.status_code}")
