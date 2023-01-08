@@ -30,7 +30,7 @@ def make_request(quiz_type, num_q):
         "https://api.openai.com/v1/completions",
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer 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",
+            "Authorization": f"Bearer {api_key}",
     },
     json={
         "model": "text-davinci-003",
