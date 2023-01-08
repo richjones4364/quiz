@@ -1,0 +1,9 @@
+steps:
+  - name: 
+      get_api_key
+    with: 
+      api_key
+      super_secret: 
+          ${{ secrets.api_key }}
+    env: # Or as an environment variable
+      super_secret: ${{ secrets.api_key }}
