@@ -8,6 +8,8 @@ import pydf
 
 app = Flask(__name__)
 
+api_key = ${{ api_key }}
+
 @app.route('/', methods=["GET", "POST"])
 def home():
     if request.method == "POST":
@@ -27,7 +29,7 @@ def make_request(quiz_type, num_q):
         "https://api.openai.com/v1/completions",
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer ${{api_key}}",
+            "Authorization": f"Bearer {api_key}",
     },
     json={
         "model": "text-davinci-003",
