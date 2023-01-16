@@ -4,11 +4,9 @@ import os
 import openai
 import json
 import requests
-import pydf
+from config import api_key
 
 app = Flask(__name__)
-
-api_key = '${{ secrets.API_KEY }}'
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -21,36 +19,33 @@ def home():
         quiz = make_request(quiz_type, num_q)
         return render_template("quiz.html", quiz=quiz)
     return render_template("index.html")
-         
 
 
 def make_request(quiz_type, num_q):
-# Make the API request
+    # Make the API request
     response = requests.post(
         "https://api.openai.com/v1/completions",
         headers={
             "Content-Type": "application/json",
             "Authorization": f"Bearer {api_key}",
-    },
-    json={
-        "model": "text-davinci-003",
-        "prompt": f"Make a {num_q} question quiz suitable for children about UK, European and USA {quiz_type} with answers",
-        "max_tokens": 2049,
-        "temperature": 1,
-    }
-)
+        },
+        json={
+            "model": "text-davinci-003",
+            "prompt": f"Make a {num_q} question quiz suitable for children about UK, European and USA {quiz_type} with answers",
+            "max_tokens": 2049,
+            "temperature": 1,
+        }
+    )
 # check server response, create python dict if all good
     if response.status_code == 200:
-    # Convert the JSON response to a Python dictionary
-       quiz = response.json()
-       return '\n'.join(item['text'] for item in quiz['choices'])
-    
+        # Convert the JSON response to a Python dictionary
+        quiz = response.json()
+        return '\n'.join(item['text'] for item in quiz['choices'])
+
     else:
         print(f"An error occurred: {response.status_code}")
         print(response.text)
         return f"An error occurred. Please try again."
-    
-    
 
 
 if __name__ == "__main__":

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+  <head>
+    <meta charset="utf-8" name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Quiz Maker</title>
+    <H1 class="text-center">Welcome to Quiz Maker!</H1>
+    
+  </head>
+  <body>
+    <H3 class="text-center" style="padding-top: 30px; padding-bottom: 30px">Generate a quiz for your class</H3>
+    <Hr style="padding-top: 30px">
+    <Div class="container-fluid">
+    <form method="post">
+      <label for="quiz_type" class="form-label">Quiz Type:</label>
+      <select name="quiz_type" id="quiz_type" class="form-control">
+        <option value="general knowledge">General Knowledge</option>
+        <option value="pop music">Pop Music</option>
+        <option value="sports">Sports</option>
+        <option value="movies">Movies</option>
+        <option value="movies">Movies</option>
+        <option value="hollywood actors">Hollywood Actors</option>
+      </select>
+      <label for="number_of_questions" class="form-label" style="padding-top: 30px">Number of questions: </label>
+        <select name="number_of_questions" id="number_of_questions" class="form-control">
+          <option value="5">5</option>
+          <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+      </select><br>
+      <input type="submit" name="Submit" class="btn btn-primary">
+    </form>
+  </Div>
+    <Hr>
+     <footer>
+      <p class="text-center">© Richard Jones 2023</p>
+     </footer>    
+  </body>
+</html>
+
